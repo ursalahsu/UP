@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- 油品名稱 -->
-    <string-array name="name">
+    <string-array name="oilsName">
         <item>椰子油</item>
         <item>棕櫚油</item>
         <item>紅棕櫚油</item>
