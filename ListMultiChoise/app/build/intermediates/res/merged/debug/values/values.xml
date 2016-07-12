@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="message_count_color">#66333333</color>
+    <color name="read_bgcolor">#ffeeeeee</color>
+    <color name="text_hairline">#ffcccccc</color>
+    <color name="timestamp_color">#bf000000</color>
+    <color name="unread_bgcolor">#ffffffff</color>
+    <color name="widget_sender_text_color_read">#555555</color>
+    <color name="widget_sender_text_color_unread">#333333</color>
+    <color name="widget_subject_text_color_read">#777777</color>
+    <color name="widget_subject_text_color_unread">#555555</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <drawable name="class_zero_background">#7f040000</drawable>
+    <drawable name="text_color_black">#ff000000</drawable>
+    <drawable name="text_color_red">#ffff4444</drawable>
+    <string name="action_deselect_all">全不选</string>
+    <string name="action_select_all">全选</string>
+    <string name="action_settings">多选</string>
+    <string name="app_name">ListMultiChoise</string>
+    <string name="select_item">已选择:</string>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

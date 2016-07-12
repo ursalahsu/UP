@@ -23,6 +23,8 @@ public class OilsActivity extends AppCompatActivity {
     String[] oilsArray;
     List<Oil> oils = new ArrayList<>();
 
+    OilsAdapter oilsAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,16 +33,26 @@ public class OilsActivity extends AppCompatActivity {
         oilsListview = (ListView) findViewById(R.id.oilsListView);
         //取得油品清單
         oilsArray = getResources().getStringArray(R.array.oilsName);
-        ArrayAdapter<String>  adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_multiple_choice,oilsArray);
-        oilsListview.setAdapter(adapter);
+//        ArrayAdapter<String>  adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_multiple_choice,oilsArray);
+        oilsAdapter = new OilsAdapter(this,oilsListview,oilsArray);
+        oilsListview.setAdapter(oilsAdapter);
+
         //設定可多選
         oilsListview.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        //點擊勾選
         oilsListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Oil oil = new Oil();
                 oil.setName(oilsArray[position]);
                 oils.add(oil);
+            }
+        });
+        //長按
+        oilsListview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                return false;
             }
         });
     }
