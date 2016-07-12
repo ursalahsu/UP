@@ -17,7 +17,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/okButton"
-        android:choiceMode="multipleChoiceModal" />
+        android:choiceMode="multipleChoiceModal"/>
 
     <Button
         android:layout_width="wrap_content"
