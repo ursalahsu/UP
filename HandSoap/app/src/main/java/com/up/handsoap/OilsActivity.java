@@ -49,7 +49,6 @@ public class OilsActivity extends AppCompatActivity {
 //                    oilsListview.getChildAt(position).setBackgroundColor(Color.RED);
 //                else
 //                    oilsListview.getChildAt(position).setBackgroundColor(Color.WHITE);
-
                 Oil oil = new Oil();
                 oil.setName(oilsArray[position]);
                 oils.add(oil);
