@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button oilAddButton;
     ListView oilsListview;
     List<Oil> oilList=new ArrayList<>();
+    OilsAdapter oilsAdapter;
 
     static int REQUEST_CODE_OILSACTIVITY = 0;
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         oilAddButton = (Button) findViewById(R.id.addButton);
         oilsListview = (ListView) findViewById(R.id.oilsListView);
+
     }
     //增加油品項目
     public void addOils(View view){
@@ -43,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //取回油品項目 列至oilsListView上
-        if(resultCode==REQUEST_CODE_OILSACTIVITY){
-            if(requestCode==RESULT_OK){
+        if(requestCode==REQUEST_CODE_OILSACTIVITY){
+            if(resultCode==RESULT_OK){
                 Toast.makeText(this,data.getStringExtra("results"),Toast.LENGTH_LONG).show();
                 try {
                     JSONArray jsonArray= new JSONArray(data.getStringExtra("results"));
@@ -53,15 +55,19 @@ public class MainActivity extends AppCompatActivity {
                         Oil oil=new Oil();
                         oil.setName(jsonObject.getString("name"));
                         oilList.add(oil);
-
+                        setupListView();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-            if(requestCode==RESULT_CANCELED){
+            if(resultCode==RESULT_CANCELED){
 
             }
         }
+    }
+    public void setupListView(){
+        oilsAdapter = new OilsAdapter(this,(String[])oilList.toArray());
+        oilsListview.setAdapter(oilsAdapter);
     }
 }

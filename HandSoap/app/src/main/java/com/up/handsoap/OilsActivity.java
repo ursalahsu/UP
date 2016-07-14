@@ -24,7 +24,6 @@ public class OilsActivity extends AppCompatActivity {
     ListView oilsListview;
     String[] oilsArray;
     List<Oil> oils = new ArrayList<>();
-
     OilsAdapter oilsAdapter;
 
     @Override
@@ -71,6 +70,7 @@ public class OilsActivity extends AppCompatActivity {
             jsonArray.put(jsonObject);
         }
         intent.putExtra("oilsList",jsonArray.toString());
+
         setResult(RESULT_OK,intent);
         finish();
     }
